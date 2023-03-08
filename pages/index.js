@@ -1,14 +1,12 @@
 import useSWR from "swr";
 import ArtPieces from "../components/ArtPieces/index";
 import Spotlight from "../components/Spotlight";
-
-const fetcher = (url) => fetch(url).then((res) => res.json());
+import { useContext } from "react";
+import { DataContext } from "./_app";
 
 export default function HomePage() {
-  const { data, error, isLoading } = useSWR(
-    "https://example-apis.vercel.app/api/art",
-    fetcher
-  );
+  const { isLoading, data, error } = useContext(DataContext);
+
   if (isLoading) {
     return <p>Loading...</p>;
   }
