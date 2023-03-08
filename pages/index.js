@@ -1,5 +1,6 @@
 import useSWR from "swr";
 import ArtPieces from "../components/ArtPieces/index";
+import Spotlight from "../components/Spotlight";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -21,6 +22,7 @@ export default function HomePage() {
 
   return (
     <div>
+      <Spotlight image={data.imageSource} artist={data.artist} />
       <ArtPieces pieces={data} />
     </div>
   );
