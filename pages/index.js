@@ -4,7 +4,7 @@ import Spotlight from "../components/Spotlight";
 import { useContext } from "react";
 import { DataContext } from "./_app";
 
-export default function HomePage() {
+export default function SpotlightPage() {
   const { isLoading, data, error } = useContext(DataContext);
 
   if (isLoading) {
@@ -27,7 +27,7 @@ export default function HomePage() {
         image={data[randomNumberFromArray].imageSource}
         artist={data[randomNumberFromArray].artist}
       />
-      <ArtPieces pieces={data} />
+      {/* <ArtPieces pieces={data} /> */}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import GlobalStyle from "../styles";
 import useSWR from "swr";
 import { createContext } from "react";
+import Layout from "../components/Layout";
 
 export const DataContext = createContext();
 
@@ -16,6 +17,7 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <DataContext.Provider value={{ data, error, isLoading }}>
         <Component {...pageProps} />
+        <Layout />
       </DataContext.Provider>
     </>
   );
