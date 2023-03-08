@@ -19,7 +19,7 @@ export default function HomePage() {
   }
 
   const randomNumberFromArray = handleRandomPick();
-  console.log(randomNumberFromArray);
+
   function handleRandomPick() {
     const randomArtNumber = Math.floor(Math.random() * data.length);
     return randomArtNumber;
