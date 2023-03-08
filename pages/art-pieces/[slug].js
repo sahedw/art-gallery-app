@@ -7,7 +7,20 @@ import { DataContext } from "../_app";
 export default function ArtDetail() {
   const { data } = useContext(DataContext);
   const router = useRouter();
-  const pickedArtPiece = data?.find((slug) => slug === router.query.slug);
-  console.log(router.query.slug);
-  return <ArtPieceDetails />;
+  const artPiece = data?.find(({ slug }) => slug === router.query.slug);
+
+  if (!artPiece) {
+    <h1>Sorry but -{router.query.slug}- is not a working keyword</h1>;
+  }
+  return (
+    <>
+      <ArtPieceDetails
+        artist={artPiece?.artist}
+        image={artPiece?.imageSource}
+        title={artPiece?.name}
+        year={artPiece?.year}
+        genre={artPiece?.genre}
+      />
+    </>
+  );
 }
