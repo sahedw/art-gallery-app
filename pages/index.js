@@ -17,14 +17,19 @@ export default function HomePage() {
   if (error) {
     return <p>Error: {error.message}</p>;
   }
-  console.log(handleRandomPick());
+
+  const randomNumberFromArray = handleRandomPick();
+  console.log(randomNumberFromArray);
   function handleRandomPick() {
     const randomArtNumber = Math.floor(Math.random() * data.length);
     return randomArtNumber;
   }
   return (
     <div>
-      <Spotlight image={data.imageSource} artist={data.artist} />
+      <Spotlight
+        image={data[randomNumberFromArray].imageSource}
+        artist={data[randomNumberFromArray].artist}
+      />
       <ArtPieces pieces={data} />
     </div>
   );
