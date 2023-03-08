@@ -16,11 +16,3 @@ test("All art pieces are displayed as a list", () => {
   const artPieces = screen.getByRole("list");
   expect(artPieces).toBeInTheDocument();
 });
-
-/* test("renders a heading", () => {
-    render(<TemperatureUnitConverter />);
-    const heading = screen.getByRole("heading", {
-      name: /temperature unit converter/i,
-    });
-    expect(heading).toBeInTheDocument();
-  });  */
