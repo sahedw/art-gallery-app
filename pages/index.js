@@ -1,5 +1,6 @@
 import useSWR from "swr";
 import ArtPieces from "../components/ArtPieces/index";
+import Spotlight from "../components/Spotlight";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -17,10 +18,18 @@ export default function HomePage() {
     return <p>Error: {error.message}</p>;
   }
 
-  console.log(data);
+  const randomNumberFromArray = handleRandomPick();
 
+  function handleRandomPick() {
+    const randomArtNumber = Math.floor(Math.random() * data.length);
+    return randomArtNumber;
+  }
   return (
     <div>
+      <Spotlight
+        image={data[randomNumberFromArray].imageSource}
+        artist={data[randomNumberFromArray].artist}
+      />
       <ArtPieces pieces={data} />
     </div>
   );
