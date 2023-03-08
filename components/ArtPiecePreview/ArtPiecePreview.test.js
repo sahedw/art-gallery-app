@@ -18,7 +18,7 @@ test("Each art piece's title is displayed", () => {
 });
 
 test("Each art piece's image is displayed", () => {
-  render(<ArtPiecePreview piece={mockData} />);
+  render(<ArtPiecePreview alt="art-piece" piece={mockData} />);
   const artPiecePreviewImage = screen.getByRole("img");
   expect(artPiecePreviewImage).toBeInTheDocument();
 });

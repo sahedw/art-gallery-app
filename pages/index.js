@@ -1,14 +1,12 @@
 import useSWR from "swr";
 import ArtPieces from "../components/ArtPieces/index";
 import Spotlight from "../components/Spotlight";
+import { useContext } from "react";
+import { DataContext } from "./_app";
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+export default function SpotlightPage() {
+  const { isLoading, data, error } = useContext(DataContext);
 
-export default function HomePage() {
-  const { data, error, isLoading } = useSWR(
-    "https://example-apis.vercel.app/api/art",
-    fetcher
-  );
   if (isLoading) {
     return <p>Loading...</p>;
   }
@@ -29,7 +27,7 @@ export default function HomePage() {
         image={data[randomNumberFromArray].imageSource}
         artist={data[randomNumberFromArray].artist}
       />
-      <ArtPieces pieces={data} />
+      {/* <ArtPieces pieces={data} /> */}
     </div>
   );
 }
