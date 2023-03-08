@@ -17,9 +17,11 @@ export default function HomePage() {
   if (error) {
     return <p>Error: {error.message}</p>;
   }
-
-  console.log(data);
-
+  console.log(handleRandomPick());
+  function handleRandomPick() {
+    const randomArtNumber = Math.floor(Math.random() * data.length);
+    return randomArtNumber;
+  }
   return (
     <div>
       <Spotlight image={data.imageSource} artist={data.artist} />
