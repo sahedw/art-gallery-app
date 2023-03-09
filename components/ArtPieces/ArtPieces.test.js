@@ -7,7 +7,7 @@ const mockData = [
     imageSource:
       "https://example-apis.vercel.app/assets/art/orange-red-and-green.jpg",
     artist: "John Doe",
-    name: "Fake Gemälde",
+    name: "Fake Art",
   },
 ];
 

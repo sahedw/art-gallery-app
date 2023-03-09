@@ -15,6 +15,8 @@ export default function SpotlightPage() {
     return <p>Error: {error.message}</p>;
   }
 
+  console.log(data);
+
   const randomNumberFromArray = handleRandomPick();
 
   function handleRandomPick() {
@@ -26,6 +28,7 @@ export default function SpotlightPage() {
       <Spotlight
         image={data[randomNumberFromArray].imageSource}
         artist={data[randomNumberFromArray].artist}
+        slug={data[randomNumberFromArray].slug}
       />
       {/* <ArtPieces pieces={data} /> */}
     </div>
