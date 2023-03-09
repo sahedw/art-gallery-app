@@ -7,7 +7,12 @@ export default function Spotlight({ slug, image, artist }) {
     <ul>
       <li>
         <Link href={`/art-pieces/${slug}`}>
-          <Image src={image} width={300} height={200} />
+          <Image
+            src={image}
+            width={300}
+            height={200}
+            alt="picture of the day"
+          />
         </Link>
         <p>{artist}</p>
       </li>
