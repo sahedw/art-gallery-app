@@ -10,16 +10,16 @@ export default function ArtDetail() {
   const artPiece = data?.find(({ slug }) => slug === router.query.slug);
 
   if (!artPiece) {
-    <h4>Sorry but -{router.query.slug}- is not a working keyword</h4>;
+    return <h4>Sorry but -{router.query.slug}- is not a working keyword</h4>;
   }
   return (
     <>
       <ArtPieceDetails
-        artist={artPiece?.artist}
-        image={artPiece?.imageSource}
-        title={artPiece?.name}
-        year={artPiece?.year}
-        genre={artPiece?.genre}
+        artist={artPiece.artist}
+        image={artPiece.imageSource}
+        title={artPiece.name}
+        year={artPiece.year}
+        genre={artPiece.genre}
       />
     </>
   );

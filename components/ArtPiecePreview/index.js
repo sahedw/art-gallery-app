@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function ArtPiecePreview({ slug, piece }) {
   return (
     <>
-      <li key={piece.slug}>
+      <li key={slug}>
         <h4>{piece.name}</h4>
         <Link href={`/art-pieces/${slug}`}>
           <Image

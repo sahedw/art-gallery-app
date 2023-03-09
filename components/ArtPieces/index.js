@@ -9,7 +9,7 @@ export default function ArtPieces({ pieces }) {
     <ul>
       {pieces.map((piece) => {
         return (
-          <ArtPiecePreview slug={piece.slug} key={piece.slug} piece={piece} />
+          <ArtPiecePreview key={piece.slug} slug={piece.slug} piece={piece} />
         );
       })}
     </ul>
